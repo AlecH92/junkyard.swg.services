@@ -1,0 +1,14 @@
+{
+    "name": "SWG Junkyard",
+    "version": "1.0.0",
+    "author": "Thomas Quinn",
+    "description": "Display interface for SWG modifier bit combinations",
+    "license": "MIT",
+    "dependencies": {
+        "angular": "latest",
+        "angular-ui-router": "latest",
+        "angular-bootstrap": "latest",
+        "bootswatch-dist": "flatly"
+    },
+    "private": true
+}

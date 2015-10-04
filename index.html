@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="JunkyardApp">
+    <head>
+        <title>SWG Junkyard</title>
+        <style>[ng\:cloak], [ng-cloak], .ng-cloak { display: none; }</style>
+        <!-- Libraries -->
+        <link rel="stylesheet" href="bower_components/bootswatch-dist/css/bootstrap.min.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <!-- Angular App -->
+        <script src="assets/ng/common/dataService.js"></script>
+        <script src="assets/ng/junk/junk.js"></script>
+        <script src="assets/ng/junk/junk.detail.js"></script>
+        <script src="assets/ng/mods/mods.js"></script>
+        <script src="assets/ng/mods/mods.detail.js"></script>
+        <script src="assets/ng/app.js"></script>
+    </head>
+    <body ng-cloak>
+        <div class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button ng-click="isCollapsed = !isCollapsed" data-target="#bs-example-navbar-collapse-3" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a ui-sref="home" class="navbar-brand visible-xs">SWG Junkyard</a>
+                </div>
+                <nav class="hidden-xs">
+                    <ul class="nav navbar-nav">
+                        <a class="navbar-brand" role="button" ui-sref="home">
+                            SWG Junkyard
+                        </a>
+                        <li><a ui-sref="junk.list">Junk Loot</a></li>
+                        <li><a ui-sref="mods.list">Modifiers</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a ui-sref="about">About</a></li>
+                    </ul>
+                </nav>
+                <nav collapse="!isCollapsed" class="visible-xs collapse in" style="height: auto; overflow: hidden">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="junk.list">Junk Loot</a></a></li>
+                        <li><a ui-sref="mods.list">Modifiers</a></li>
+                        <li><a ui-sref="about">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="container">
+            <ui-view></ui-view>
+        </div>
+    </body>
+</html>

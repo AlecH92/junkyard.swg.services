@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{thisJunk.h}}</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Internal Name
+                            </div>
+                            <div class="panel-body">
+                                {{thisJunk.n}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Search Options</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="otherLoot">
+                                Second Junk Loot Item
+                            </label>
+                            <input
+                                class="form-control" id="otherLoot" ng-model="otherLoot"
+                                type="text" placeholder="Enter junk loot name..."
+                            >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="modifier">
+                                Modifier Bit
+                            </label>
+                            <input
+                                class="form-control" id="modifier" ng-model="modifier"
+                                type="text" placeholder="Enter modifier bit..."
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Second Junk Loot Item</th>
+                        <th>Modifier Bit Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="combo in combos | filter: otherLoot | filter: modifier">
+                        <td>
+                            <a ui-sref="junk.detail({junkName: combo[0].n})">
+                                {{combo[0].h}}
+                            </a>
+                        </td>
+                        <td>
+                            <a ui-sref="mods.detail({modName: combo[1].n})">
+                                {{combo[1].h}}
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
