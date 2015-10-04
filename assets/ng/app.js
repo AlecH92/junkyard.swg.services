@@ -5,7 +5,7 @@ angular.module('JunkyardApp', [
     'ui.router'
 ])
 
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,  $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
     $stateProvider
         .state('home', {
@@ -16,4 +16,11 @@ angular.module('JunkyardApp', [
             url: "/about",
             templateUrl: "assets/ng/common/about.html"
         });
+}])
+
+.run(['$rootScope', '$location', '$window', function($rootScope, $location, $window) {
+     $rootScope.$on('$stateChangeSuccess', function(event) {
+        if (!$window.ga) return;
+        $window.ga('send', 'pageview', { page: $location.path() });
+    });
 }]);
