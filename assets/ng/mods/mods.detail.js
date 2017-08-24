@@ -12,7 +12,7 @@ angular.module('JunkyardApp.mods')
             $scope.combos = [];
             for (var i = 0; i < $scope.junk.length; i++) {
                 for (var j = 0; j < $scope.junk.length; j++) {
-                    if ($scope.getModifier($scope.junk[i], $scope.junk[j]) == $scope.thisMod) {
+                    if ($scope.getModifier($scope.junk[i], $scope.junk[j]).n == $scope.thisMod.n) {
                         $scope.combos.push([$scope.junk[i], $scope.junk[j]]);
                     }
                 }
